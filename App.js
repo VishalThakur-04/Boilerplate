@@ -264,24 +264,30 @@ export default App;
 
 */
 
-import 'react-native-gesture-handler'
+
 import React, { Component } from 'react'
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/lib/integration/react'
-import { store, persistor } from './CreateStore'
-import { AppNavigator } from './AppNavigator'
 
+import  AppNavigator  from './AppNavigator'
+import CreateStore from './CreateStore'
 
+const {store, persistor} = CreateStore()
 export default class App extends Component{
   constructor(props)
   {
-    super(props)
+    super()
+    this.state={
+      data:[]
+    }
   }
   componentDidMount()
     {
-console.log("C ME HERE")
+       console.log("C ME HERE")
       
+
     }
+   
 
 
 render() {

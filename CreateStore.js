@@ -9,7 +9,7 @@ import {AsyncStorage} from '@react-native-community/async-storage'
 export default () => {
   const persistConfig = {
     key: 'root',
-    AsyncStorage,
+    storage
   }
   const persistedReducer = persistReducer(persistConfig, reducers)
   const store = createStore(persistedReducer, applyMiddleware(thunk))

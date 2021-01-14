@@ -1,20 +1,9 @@
 import HomeScreen from "./src/screens/HomeScreen";
 import DetailScreen from "./src/screens/DetailScreen"
-import { createStackNavigator} from "@react-navigation/stack"
+import { createStackNavigator} from "react-navigation-stack"
+import {createAppContainer} from "react-navigation"
 
-const Stack =createStackNavigator();
-
-function Mystack()
-{
-  return(
-    <Stack.Navigator>
-      <Stack.Screen name="Home" component={HomeScreen}/>
-      <Stack.Screen name="Detail" component={DetailScreen}/>
-    </Stack.Navigator>
-  );
-}
-
-/*const AppNavigator = createStackNavigator(
+const AppNavigator = createStackNavigator(
     {
       Home: {
         screen: HomeScreen,
@@ -28,7 +17,7 @@ function Mystack()
         swipeEnabled: true,
       },
 );
-*/
+
 
 const prevGetStateForActionHomeStack = AppNavigator.router.getStateForAction;
 AppNavigator.router.getStateForAction = (action, state) => {
